@@ -92,7 +92,7 @@ export default function NavBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton color="inherit">
-              <Badge badgeContent={this.props.seconds} color="secondary">
+              <Badge badgeContent={secs} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>

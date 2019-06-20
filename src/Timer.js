@@ -1,12 +1,15 @@
 import React, { useState, useEffect, createContext } from 'react';
 import './Timer.css'
+import NavBar from './NavBar'
 
 export const secContext = createContext()
 
 const Timer = () => {
+    const [seconds, setSeconds] = useState(0);
+    const [isActive, setIsActive] = useState(false);
 
     function toggle() {
-        this.props.setIsActive(!isActive);
+        setIsActive(!isActive);
     }
 
     function reset() {
@@ -29,8 +32,9 @@ const Timer = () => {
     return (
         <div className="app">
             <secContext.Provider value={seconds}>
+            <NavBar />
             <div className="time">
-                {this.props.seconds}s
+                {seconds}s
             </div>
             <div className="row">
                 <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
